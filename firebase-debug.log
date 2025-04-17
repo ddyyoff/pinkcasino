@@ -1,0 +1,68 @@
+[debug] [2025-04-17T13:18:09.325Z] ----------------------------------------------------------------------
+[debug] [2025-04-17T13:18:09.328Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\arle_\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-04-17T13:18:09.328Z] CLI Version:   14.2.0
+[debug] [2025-04-17T13:18:09.328Z] Platform:      win32
+[debug] [2025-04-17T13:18:09.328Z] Node Version:  v22.14.0
+[debug] [2025-04-17T13:18:09.329Z] Time:          Thu Apr 17 2025 16:18:09 GMT+0300 (Москва, стандартное время)
+[debug] [2025-04-17T13:18:09.329Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-17T13:18:09.334Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-17T13:18:09.335Z] > authorizing via signed-in user (arsenykotov6@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\arle_\OneDrive\Документы\casino
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-04-17T13:18:21.070Z] Checked if tokens are valid: true, expires at: 1744898903783
+[debug] [2025-04-17T13:18:21.070Z] Checked if tokens are valid: true, expires at: 1744898903783
+[debug] [2025-04-17T13:18:21.071Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-04-17T13:18:21.671Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-04-17T13:18:21.671Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project casino-roulette-pink (Casino Roulette Pink) 
+[info] 
+=== Hosting Setup
+[debug] [2025-04-17T13:18:23.002Z] Checked if tokens are valid: true, expires at: 1744898903783
+[debug] [2025-04-17T13:18:23.002Z] Checked if tokens are valid: true, expires at: 1744898903783
+[debug] [2025-04-17T13:18:23.002Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/casino-roulette-pink [none]
+[debug] [2025-04-17T13:18:23.291Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/casino-roulette-pink 200
+[debug] [2025-04-17T13:18:23.292Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/casino-roulette-pink {"projectId":"casino-roulette-pink","projectNumber":"7274022115","displayName":"Casino Roulette Pink","name":"projects/casino-roulette-pink","resources":{"hostingSite":"casino-roulette-pink"},"state":"ACTIVE","etag":"1_bb85d27a-2071-4179-9765-243a17400c42"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-04-17T13:20:29.741Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-04-17T13:20:29.976Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-04-17T13:20:29.976Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.6.0","browserURL":"https://www.gstatic.com/firebasejs/11.6.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.6.0/firebase.tgz"},"live":{"version":"11.6","browserURL":"https://www.gstatic.com/firebasejs/live/11.6/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.6/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.6.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.6.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.6.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.6.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.6.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.6.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.6.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.6.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.memory.js"}}
+[info] +  Wrote ./index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\arle_\OneDrive\Документы\casino is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=924436325&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-04-17T13:21:34.805Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-04-17T13:21:34.805Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-04-17T13:21:35.270Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-04-17T13:21:35.270Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-04-17T13:21:35.273Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-04-17T13:21:35.783Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-04-17T13:21:35.783Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"ddyyoff","id":199344740,"node_id":"U_kgDOC-HCZA","avatar_url":"https://avatars.githubusercontent.com/u/199344740?v=4","gravatar_id":"","url":"https://api.github.com/users/ddyyoff","html_url":"https://github.com/ddyyoff","followers_url":"https://api.github.com/users/ddyyoff/followers","following_url":"https://api.github.com/users/ddyyoff/following{/other_user}","gists_url":"https://api.github.com/users/ddyyoff/gists{/gist_id}","starred_url":"https://api.github.com/users/ddyyoff/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/ddyyoff/subscriptions","organizations_url":"https://api.github.com/users/ddyyoff/orgs","repos_url":"https://api.github.com/users/ddyyoff/repos","events_url":"https://api.github.com/users/ddyyoff/events{/privacy}","received_events_url":"https://api.github.com/users/ddyyoff/received_events","type":"User","user_view_type":"private","site_admin":false,"name":"DDYY","company":null,"blog":"","location":"Moscow","email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":1,"public_gists":0,"followers":1,"following":1,"created_at":"2025-02-15T08:49:53Z","updated_at":"2025-02-15T09:04:13Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":8,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as ddyyoff 
+[info] 

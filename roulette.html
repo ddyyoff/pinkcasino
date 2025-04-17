@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Милая Розовая Рулетка</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ff66b2;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .roulette {
+      background: #fff0f5;
+      border: 4px dashed #ff99cc;
+      border-radius: 20px;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #d63384;
+      margin-bottom: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .roulette.spin {
+      transform: rotate(1080deg) scale(1.05);
+    }
+
+    .history {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+      max-height: 150px;
+      overflow-y: auto;
+      width: 300px;
+      font-size: 1rem;
+      color: #cc3366;
+    }
+
+    .stats {
+      margin-top: 10px;
+      background: #ffe0ec;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1rem;
+      color: #cc3366;
+      width: 300px;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.1);
+    }
+
+    .balance {
+      margin-top: 10px;
+      background: #fff0fa;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      color: #cc0066;
+      width: 300px;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px #cc6699;
+      transition: background-color 0.2s ease;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #ff66b2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Розовая Рулетка</h1>
+  <div class="roulette" id="roulette">🎀</div>
+  <button onclick="spinRoulette()">Крутить за 10 💎</button>
+  <button onclick="topUpBalance()">The whole bet</button>
+  <div class="balance">Баланс: <span id="balance">100</span> 💎</div>
+  <div class="stats" id="stats">
+    <strong>Статистика:</strong><br>
+    Всего попыток: <span id="total">0</span><br>
+    Бананов: <span id="banana">0</span><br>
+    Собак: <span id="dog">0</span><br>
+    Ёлок: <span id="tree">0</span>
+  </div>
+  <div class="history" id="history">
+    <strong>История выпадений:</strong>
+    <ul id="historyList"></ul>
+  </div>
+
+  <script>
+    const items = [
+      '🍌 Банан',
+      '🐶 Розовая собака',
+      '🎄 Розовая ёлка'
+    ];
+
+    const sounds = {
+      spin: new Audio('https://cdn.jsdelivr.net/gh/jshawl/misc-audio/spin.mp3'),
+      win: new Audio('https://cdn.jsdelivr.net/gh/jshawl/misc-audio/win.mp3')
+    };
+
+    let stats = {
+      total: 0,
+      banana: 0,
+      dog: 0,
+      tree: 0
+    };
+
+    let balance = 100;
+    const spinCost = 10;
+
+    function updateStats(result) {
+      stats.total++;
+      if (result.includes('Банан')) stats.banana++;
+      else if (result.includes('собака')) stats.dog++;
+      else if (result.includes('ёлка')) stats.tree++;
+
+      document.getElementById('total').textContent = stats.total;
+      document.getElementById('banana').textContent = stats.banana;
+      document.getElementById('dog').textContent = stats.dog;
+      document.getElementById('tree').textContent = stats.tree;
+    }
+
+    function updateBalance(amount) {
+      balance += amount;
+      document.getElementById('balance').textContent = balance;
+    }
+
+    function topUpBalance() {
+      updateBalance(50);
+    }
+
+    function spinRoulette() {
+      if (balance < spinCost) {
+        alert('Недостаточно 💎 для вращения!');
+        return;
+      }
+
+      const roulette = document.getElementById('roulette');
+      const historyList = document.getElementById('historyList');
+
+      updateBalance(-spinCost);
+      sounds.spin.play();
+
+      roulette.classList.add('spin');
+      setTimeout(() => {
+        const result = items[Math.floor(Math.random() * items.length)];
+        roulette.textContent = result;
+        roulette.classList.remove('spin');
+        sounds.win.play();
+
+        const li = document.createElement('li');
+        li.textContent = result;
+        historyList.prepend(li);
+
+        updateStats(result);
+
+        if (result.includes('Банан')) updateBalance(5);
+        else if (result.includes('собака')) updateBalance(20);
+        else if (result.includes('ёлка')) updateBalance(10);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
